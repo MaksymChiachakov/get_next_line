@@ -25,7 +25,7 @@ static char *extract_line(char *stash)
     }
     if (stash[i] == '\n')
     {
-        line[i] == '\n'
+        line[i] = '\n';
         i++;
     }
     line[i] = '\0';
@@ -37,6 +37,7 @@ static char *clean_stash(char *stash)
     char    *newstash;
     int i;
     int j;
+	size_t	len;
 
     i = 0;
     while(stash[i] && stash[i] != '\n')
@@ -47,7 +48,8 @@ static char *clean_stash(char *stash)
         return (NULL);
     }
     i++;
-    newstash = malloc(ft_strlen_gnl(stash) - i + 1);
+	len = ft_strlen_gnl(stash);
+    newstash = malloc(len - i + 1);
     if (!newstash)
         return (NULL);
     j = 0;
@@ -64,6 +66,7 @@ char    *get_next_line(int fd)
     char    buffer[BUFFER_SIZE + 1];
     char    *line;
     ssize_t bytes;
+
     if (fd < 0 || BUFFER_SIZE <= 0)
         return (NULL);
     bytes = 1;
