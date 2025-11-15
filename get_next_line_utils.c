@@ -1,8 +1,8 @@
 #include "get_next_line.h"
 
-size_t  ft_strlen_gnl(char *s)
+size_t	ft_strlen_gnl(char *s)
 {
-    size_t  i;
+    size_t	i;
 
     i = 0;
     if (!s)
@@ -12,7 +12,7 @@ size_t  ft_strlen_gnl(char *s)
     return (i);
 }
 
-char    *ft_strchr_gnl(char *s, int c)
+char	*ft_strchr_gnl(char *s, int c)
 {
     if (!s)
         return (NULL);
@@ -27,11 +27,11 @@ char    *ft_strchr_gnl(char *s, int c)
     return (NULL);
 }
 
-char    *ft_strdup_gnl(char *s)
+char	*ft_strdup_gnl(char *s)
 {
-    size_t  i;
-    size_t  len;
-    char    *dup;
+    size_t	i;
+    size_t	len;
+    char	*dup;
 
     if (!s)
         return (NULL);
@@ -49,11 +49,11 @@ char    *ft_strdup_gnl(char *s)
     return (dup);
 }
 
-char    *ft_strjoin_gnl(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
-    size_t  i;
-    size_t  j;
-    char    *res;
+    size_t	i;
+    size_t	j;
+    char	*res;
 
     if (!s1 && s2)
         return (ft_strdup_gnl(s2));
